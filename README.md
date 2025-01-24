@@ -2,13 +2,9 @@
 
 This are the implementation code from the techical paper "Document Retrieval via Context-Structured Keyword Augmentation and LLM-Based Question Generation".
 
-Retrieval.py is the main with query_reformulation.py as a file to generate the proposed context-full question form query.
+Query_reformulation.py is the code file that implement the research proposed in the paper, with retrieval.py as the main file.
 
-To run the test, execute "python retrieval.py". This will generate new files titled <tested_dataset>_proposed.json, that will be further retrieved in retrieval.py. After finishing the file execution, <tested_dataset>_result.jsonl will be generated. This jsonl file still have to be transformed into jsonl.gz to then be tested into eval.ai web testing, please change the format and do the testing accordingly.
-https://eval.ai/web/challenges/challenge-page/689/overview
+In this code, 5 datasets are tested, namely; Natural Question (NQ), Wizard of Wikipedia (WoW), ZeroshotRE, FEVER, and HotpotQA.
 
-To execute this script, please make sure to have downloaded the "metadata_flatip.index" and "flatip_400.db" files to support the retrieval process from the following link due to github file size constraint.
+To generate the result, execute "python retrieval.py" creating files titled <tested_dataset>_proposed.json composing of the new query expanded. Furthermore, files titled <tested_dataset>_result.jsonl will be as the final result of retrieval using inner product similarity. To execute this script, please make sure to have downloaded the "metadata_flatip.index" and "flatip_400.db" files to support the retrieval process.
 https://drive.google.com/drive/folders/1yDUCJ-5UUcKpqRvJVOazsHllnA4ww1pi?usp=sharing
-
-Furthermore, this script also uses "gte-base" and "e5-base-v2" embeddings for encoding, "gte-small" embeddings for decoding, and "microsoft/Phi-3-mini-4k-instruct" LLM in which i run locally. Please expect these being downloaded into you local machine.
-
